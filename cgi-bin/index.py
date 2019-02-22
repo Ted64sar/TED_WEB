@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*-
-import sys
-import codecs
+from flask import Flask
 
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
-# !/usr/bin/python
+app = Flask(__name__)
 
 
-print("Content-type: text/html")
-print()
-print("<h1>«Привет, Яндекс! Я - Фёдор»</h1>")
+@app.route('/')
+@app.route('/index')
+def index():
+    return "Привет, Яндекс!"
+
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.1')
