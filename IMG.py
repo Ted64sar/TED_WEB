@@ -7,9 +7,10 @@ app = Flask(__name__)
 @app.route('/index')
 def index():
     '''<img src="{}" alt="здесь должна была быть картинка, 
-        но не нашлась">'''.format(url_for('static', filename='img/Риана.jpg'))
+           но не нашлась">'''.format(url_for('static', filename='img/Риана.jpg'))
 
     return "Привет, Яндекс!"
+
 
 @app.route('/')
 @app.route('/image_sample')
